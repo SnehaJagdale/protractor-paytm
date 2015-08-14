@@ -1,0 +1,162 @@
+<html><head>
+	<title>Test Report</title>
+	<style type="text/css">
+		/* general */
+		body {
+			background-color: SeaShell;
+			min-width: 1000px;
+		}
+
+		div#reportTable {
+			margin-left: auto; 
+			margin-right: auto;
+			width: 90%;
+			border: 5px ridge #E3EAF2;
+		}
+		
+		table {
+			width: 100%;
+			border-collapse: collapse;   
+			background-color: #E7EDF5; 
+			table-layout: fixed;
+		}
+		td {
+			border-left: 1px solid black;
+			border-bottom: 1px solid black;
+			word-break: break-word;
+		}
+
+		.expanded {
+			background-repeat: no-repeat;
+			width: 16;
+			height: 16;
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9QTFRFeXl53d3dmpqasbGx////GU0iEgAAAAV0Uk5T/////wD7tg5TAAAAK0lEQVQI12NwgQIG0hhCDAwMTCJAhqMCA4MiWEoIJABiOCooQhULi5BqMgB2bh4svs8t+QAAAABJRU5ErkJggg==');
+		}
+
+		.collapsed {
+			background-repeat: no-repeat;
+			width: 16;
+			height: 16;
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURXl5ed3d3ZqamrGxsf///xlNIhIAAAAFdFJOU/////8A+7YOUwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAvSURBVBjTY3CBAlSGI4whBGU4KkAZQgwQhqMClOHMgC4CV4PQBTcHYbILFoaLCwCrIB7+CSEIHAAAAABJRU5ErkJggg==');
+		}
+
+		.indent {
+			width: 20px;
+		}
+
+		/* suite */
+		.suite {
+			border-bottom: 4px ridge gray;
+		}
+
+		.subTotal {
+			width: 80px;
+			font-weight: bold;
+		}
+
+
+		/* tests */
+		.title  {
+			width: auto;		
+		}
+
+		.duration {
+			width: 90px;
+		}
+
+		.durationPorP {
+			padding-left: 17px;
+			width: 90px;
+		}
+
+		.passedState, .failedState, .pendingState {
+			color: white;
+			text-align: center;
+			width: 60px; 
+		}
+
+		.passedState {
+			background-color: DarkGreen; 
+		}
+		.failedState { 
+			background-color: DarkRed;  
+		}
+		.pendingState { 
+			background-color: DarkBlue; 
+		}
+
+		.passed {
+			background-color: #7EDF9F;
+		}
+		.failed {
+			background-color: #E0A7A7;
+		}
+
+		.pending {
+			background-color: lightblue;
+		}
+
+		.failDetail .passDetail {
+			width: auto; 
+			word-wrap: normal;
+		}
+
+		/* other */
+		.totalsLeft {
+			width: 200px;
+			height: 100px;
+			margin-left: 5%;
+			padding-top: 20px;
+			padding-left:5px;
+			font-weight: bold;
+			float:left;
+		}
+
+		.totalsRight {
+			text-align:center;
+			line-height: 50px;
+			color: white;
+			font-weight: bold;
+			overflow: hidden;
+			
+			height: 50px;
+			margin-right: 5%;
+			margin-top: 20px;
+			padding-top: 20px;
+			float:right;
+		}
+
+		.innerDiv {
+			border:none;
+		}
+
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		var showHide = function(id,pid) { 
+			var element = $("."+id); 
+			var pelement = $("."+pid);
+			var imageTD = pelement.filter('#'+id).find('#image');
+
+			if (pelement.css("display") == "none") { 
+				element.toggle(false);
+				imageTD.attr('class', 'collapsed');
+				element.click(); 
+			} else { 
+				element.toggle();
+				if (element.css("display") == "none") {
+					imageTD.attr('class', 'collapsed');
+					element.click();
+				} else {
+					imageTD.attr('class', 'expanded');
+				}
+			}
+		}
+
+		window.onload = function() {
+			$(".failed").click();
+			$(".passlog").click();
+		}
+	</script>
+</head><body><div style="height:120px;"><div class="totalsLeft"><div class="innerDiv" style="color: black">Run Time: 0d 0:0:39:477</div><div class="innerDiv">Total: 15</div><div class="innerDiv" style="color: DarkGreen;">Passed: 15</div><div class="innerDiv" style="color: DarkRed;">Failed: 0</div><div class="innerDiv" style="color: DarkBlue;">Pending: 0</div></div><div class="totalsRight" style="width: 695px;"><div class="innerDiv" style="width:695px; background-color: DarkGreen; height:50px; float:left;">100%</div><div class="innerDiv" style="width:0px; background-color: DarkRed; height:50px; float:left;">0%</div><div class="innerDiv" style="width:0px; background-color: DarkBlue; height:50px; float:left;">0%</div></div></div><div id="reportTable"><table cellspacing="0" cellpadding="0"><tr id="b434d7f2-22f0-0926-0b24-373183aca78f-4ae5" onclick="showHide('b434d7f2-22f0-0926-0b24-373183aca78f-4ae5', 'c4766089-c9b0-569a-be96-e8fb193e0374-81fe')" class="c4766089-c9b0-569a-be96-e8fb193e0374-81fe suite"><td id="image" class="expanded"></td><td class="title">This a software test specification for books page in PayTM Website</td><td class="subTotal" style="color: DarkGreen;">Pass: 2</td><td class="subTotal" style="color: DarkRed;">Fail: 0</td><td class="subTotal" style="color: DarkBlue;">Pend: 0</td><td class="subTotal" style="color: black; width: 120px;">0d 0:0:3:251</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="b434d7f2-22f0-0926-0b24-373183aca78f-4ae5 passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">1411 ms</td><td class="title">Should Invokes the Books Tab and return title of Books page</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="b434d7f2-22f0-0926-0b24-373183aca78f-4ae5 passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">1840 ms</td><td class="title">Should have list items present on the Books Page</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr id="127dc13f-b706-3927-abcf-925eb7859534-27df" onclick="showHide('127dc13f-b706-3927-abcf-925eb7859534-27df', 'c4766089-c9b0-569a-be96-e8fb193e0374-81fe')" class="c4766089-c9b0-569a-be96-e8fb193e0374-81fe suite"><td id="image" class="expanded"></td><td class="title">This a software test specification for Bus Tickets Page in PayTM Website</td><td class="subTotal" style="color: DarkGreen;">Pass: 2</td><td class="subTotal" style="color: DarkRed;">Fail: 0</td><td class="subTotal" style="color: DarkBlue;">Pend: 0</td><td class="subTotal" style="color: black; width: 120px;">0d 0:0:18:203</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="127dc13f-b706-3927-abcf-925eb7859534-27df passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">17 ms</td><td class="title">Should have title of the Bus Tickets page</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="127dc13f-b706-3927-abcf-925eb7859534-27df passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">18186 ms</td><td class="title">Smoke:Should Sets Origin, Destination and search buses</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr id="1e196197-e39b-55f0-5f66-879cc0b55d64-549f" onclick="showHide('1e196197-e39b-55f0-5f66-879cc0b55d64-549f', 'c4766089-c9b0-569a-be96-e8fb193e0374-81fe')" class="c4766089-c9b0-569a-be96-e8fb193e0374-81fe suite"><td id="image" class="expanded"></td><td class="title">This a software test specification for Home Page in PayTM Website</td><td class="subTotal" style="color: DarkGreen;">Pass: 4</td><td class="subTotal" style="color: DarkRed;">Fail: 0</td><td class="subTotal" style="color: DarkBlue;">Pend: 0</td><td class="subTotal" style="color: black; width: 120px;">0d 0:0:6:91</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="1e196197-e39b-55f0-5f66-879cc0b55d64-549f passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">756 ms</td><td class="title">Smoke:Should have expected title for Home Page</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="1e196197-e39b-55f0-5f66-879cc0b55d64-549f passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">1312 ms</td><td class="title">Regression:Should Sets the mobile number and should return the mobile provider</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="1e196197-e39b-55f0-5f66-879cc0b55d64-549f passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">2853 ms</td><td class="title">Regression:Should Sets number/amount and should return the provider</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="1e196197-e39b-55f0-5f66-879cc0b55d64-549f passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">1170 ms</td><td class="title">Smoke:Should have all tabs are present on Home Page Loading</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr id="4349d541-e763-5cf8-427c-aee8b0716295-dea7" onclick="showHide('4349d541-e763-5cf8-427c-aee8b0716295-dea7', 'c4766089-c9b0-569a-be96-e8fb193e0374-81fe')" class="c4766089-c9b0-569a-be96-e8fb193e0374-81fe suite"><td id="image" class="expanded"></td><td class="title">This a software test specification for Electronics Page in PayTM Website</td><td class="subTotal" style="color: DarkGreen;">Pass: 2</td><td class="subTotal" style="color: DarkRed;">Fail: 0</td><td class="subTotal" style="color: DarkBlue;">Pend: 0</td><td class="subTotal" style="color: black; width: 120px;">0d 0:0:2:793</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="4349d541-e763-5cf8-427c-aee8b0716295-dea7 passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">1282 ms</td><td class="title">Should Invokes the Electronics Tab and should have the title of Electronics Page</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="4349d541-e763-5cf8-427c-aee8b0716295-dea7 passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">1511 ms</td><td class="title">Should have list item/images is present on the Electronics Page and return list items</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr id="c9c3c5f7-bbd8-4c0a-ca2a-551d835b1a36-0d16" onclick="showHide('c9c3c5f7-bbd8-4c0a-ca2a-551d835b1a36-0d16', 'c4766089-c9b0-569a-be96-e8fb193e0374-81fe')" class="c4766089-c9b0-569a-be96-e8fb193e0374-81fe suite"><td id="image" class="expanded"></td><td class="title">This a software test specification for for ordering a Mobile Page in PayTM Website</td><td class="subTotal" style="color: DarkGreen;">Pass: 1</td><td class="subTotal" style="color: DarkRed;">Fail: 0</td><td class="subTotal" style="color: DarkBlue;">Pend: 0</td><td class="subTotal" style="color: black; width: 120px;">0d 0:0:5:647</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="c9c3c5f7-bbd8-4c0a-ca2a-551d835b1a36-0d16 passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">5647 ms</td><td class="title">Place order</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr id="16a55b2b-7e9b-0f26-6ab3-170c2d4c4439-b53a" onclick="showHide('16a55b2b-7e9b-0f26-6ab3-170c2d4c4439-b53a', 'c4766089-c9b0-569a-be96-e8fb193e0374-81fe')" class="c4766089-c9b0-569a-be96-e8fb193e0374-81fe suite"><td id="image" class="expanded"></td><td class="title">This a software test specification for Men's Page in PayTM Website</td><td class="subTotal" style="color: DarkGreen;">Pass: 2</td><td class="subTotal" style="color: DarkRed;">Fail: 0</td><td class="subTotal" style="color: DarkBlue;">Pend: 0</td><td class="subTotal" style="color: black; width: 120px;">0d 0:0:1:617</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="16a55b2b-7e9b-0f26-6ab3-170c2d4c4439-b53a passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">605 ms</td><td class="title">Should Invokes the Men's Tab and return the title of the Mens page</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="16a55b2b-7e9b-0f26-6ab3-170c2d4c4439-b53a passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">1012 ms</td><td class="title">Should have the list items present on the Mens Page</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr id="d3ff3f26-b282-c2dd-5282-879758381b06-ffdf" onclick="showHide('d3ff3f26-b282-c2dd-5282-879758381b06-ffdf', 'c4766089-c9b0-569a-be96-e8fb193e0374-81fe')" class="c4766089-c9b0-569a-be96-e8fb193e0374-81fe suite"><td id="image" class="expanded"></td><td class="title">This a software test specification for Women Page in PayTM Website</td><td class="subTotal" style="color: DarkGreen;">Pass: 2</td><td class="subTotal" style="color: DarkRed;">Fail: 0</td><td class="subTotal" style="color: DarkBlue;">Pend: 0</td><td class="subTotal" style="color: black; width: 120px;">0d 0:0:1:875</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="d3ff3f26-b282-c2dd-5282-879758381b06-ffdf passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">733 ms</td><td class="title">Should have Invokes the Women's Tab and should have the title of the Women page</td><td class="passedState">Passed</td></tr></table><table cellspacing="0" cellpadding="0"><tr class="d3ff3f26-b282-c2dd-5282-879758381b06-ffdf passed" ><td style="background-color: rgb(56,56,56);" class="indent"></td><td class="durationPorP">1142 ms</td><td class="title">Should have the list items present on the Women's Page</td><td class="passedState">Passed</td></tr></table></div></body></html>

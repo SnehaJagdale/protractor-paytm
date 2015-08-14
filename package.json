@@ -1,0 +1,44 @@
+{
+  "name": "ProtractorDemo",
+  "version": "0.0.0",
+  "description": "Protractor demo",
+  "main" : "smoke.js",
+  "scripts":{
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ZS",
+  "license": "Synerzip",
+  "devDependencies": {
+    "protractor" : "~2.1.0"
+  },
+  "scripts":{
+    "setup": "npm install && node node_modules/protractor/bin/webdriver-manager update",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }    ,
+
+  "devDependencies": {
+    "chai":"*",
+    "chai-as-promised":"*",
+    "chalk":"*",
+    "grunt":"*",
+    "grunt-contrib-clean":"*",
+    "grunt-contrib-concat":"*",
+    "grunt-contrib-copy":"*",
+    "grunt-contrib-cssmin":"*",
+    "grunt-contrib-handlebars":"*",
+    "grunt-contrib-jshint":"*",
+    "grunt-contrib-qunit":"*",
+    "grunt-contrib-uglify":"*",
+    "grunt-contrib-watch":"*",
+    "grunt-mocha-protractor":"*",
+    "grunt-protractor-runner":"*",
+    "grunt-protractor-webdriver":"*",
+    "grunt-run":"*",
+    "grunt-shell-spawn":"*",
+    "karma-htmlfile-reporter":"*",
+    "mocha":"*",
+    "mocha-html-reporter":"*",
+    "protractor":"*"
+  }
+
+}
