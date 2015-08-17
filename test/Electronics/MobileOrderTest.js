@@ -15,7 +15,7 @@ describe ('This a software test specification for for ordering a Mobile Page in 
         objBrowser.launchBrowser("https://paytm.com/");
     });
 
-    it ('Place order', function(done) {
+    it ('Regression : Should place a mobile order', function(done) {
         objMobilePage.clickOnMobileTab();
         objMobilePage.clickOnItem();
         objMobilePage.clickOnBuy();

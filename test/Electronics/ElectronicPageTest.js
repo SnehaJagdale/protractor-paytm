@@ -17,13 +17,13 @@ describe ('This a software test specification for Electronics Page in PayTM Webs
         objBrowser.launchBrowser("https://paytm.com/");
     });
 
-    it('Should Invokes the Electronics Tab and should have the title of Electronics Page', function (done) {
+    it('Smoke : Should Invokes the Electronics Tab and should have the title of Electronics Page', function (done) {
         objElectronicsPage.clickOnElectronicsTab();
         expect(objBrowser.getTitleBrowser()).to.eventually.equal('Electronic Store - Buy Mobile, Laptop & Accessories Online in India | Paytm.com');
         done();
     });
 
-    it('Should have list item/images is present on the Electronics Page and return list items', function (done) {
+    it('Regression : Should have list item/images is present on the Electronics Page and return list items', function (done) {
         objElectronicsPage.clickOnElectronicsTab();
         objElectronicsPage.VerifyListItems();
         done();

@@ -18,7 +18,7 @@ describe ('This a software test specification for Bus Tickets Page in PayTM Webs
         objBrowser.launchBrowser("https://paytm.com/bus-tickets");
     });
 
-    it ('Should have title of the Bus Tickets page', function(done) {
+    it ('Smoke:Should have title of the Bus Tickets page', function(done) {
         expect(objBrowser.getTitleBrowser()).to.eventually.equal('Online Bus Ticket Booking, Book Volvo or AC Bus Tickets Online @ Paytm');
         done();
     });

@@ -21,7 +21,7 @@ describe ('This a software test specification for books page in PayTM Website', 
         done();
     });
 
-    it('Should have list items present on the Books Page', function (done) {
+    it('Regression : Should have list items present on the Books Page', function (done) {
         objBooksPage.clickBooksTab();
         objBooksPage.VerifyListItems();
         done();
