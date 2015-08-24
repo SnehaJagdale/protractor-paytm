@@ -22,22 +22,14 @@
     "chalk":"*",
     "grunt":"*",
     "grunt-contrib-clean":"*",
-    "grunt-contrib-concat":"*",
-    "grunt-contrib-copy":"*",
-    "grunt-contrib-cssmin":"*",
-    "grunt-contrib-handlebars":"*",
     "grunt-contrib-jshint":"*",
-    "grunt-contrib-qunit":"*",
-    "grunt-contrib-uglify":"*",
     "grunt-contrib-watch":"*",
     "grunt-mocha-protractor":"*",
     "grunt-protractor-runner":"*",
     "grunt-protractor-webdriver":"*",
+	"grunt-shell-spawn":"*",
     "grunt-run":"*",
-    "grunt-shell-spawn":"*",
-    "karma-htmlfile-reporter":"*",
     "mocha":"*",
-    "mocha-html-reporter":"*",
     "protractor":"*"
   }
 
