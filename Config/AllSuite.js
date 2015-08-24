@@ -27,6 +27,19 @@ exports.config = {
     timeout: 80000
   },
 
+   params: {
+    mobileData: {
+      mobileNo: '9049894475',
+      mobileProvider: '#ng123#',
+      amount: '300'
+    },
+    busTickets: {
+      src : 'Pune',
+      destination : 'Mumbai',
+      date: '25'
+    }
+  },
+
 //  mochaTest: {
 //    test: {
 //      specs: ['test/Automative/*.js'],

@@ -24,7 +24,7 @@ describe ('This a software test specification for Bus Tickets Page in PayTM Webs
     });
 
     it ('Smoke:Should Sets Origin, Destination and search buses', function(done) {
-        objBusTicketsPage.ticketBooking('Pune','Yavatmal','25');
+        objBusTicketsPage.ticketBooking(browser.params.busTickets.src,browser.params.busTickets.destination,browser.params.busTickets.date);
         expect(objLoginPage.verifyLoginPopup()).to.become(true);
         done();
     });

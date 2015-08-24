@@ -29,6 +29,14 @@ exports.config = {
     timeout: 60000
   },
 
+  params: {
+    busTickets: {
+      src : 'Pune',
+      destination : 'Mumbai',
+      date: '25'
+    }
+  },
+
 //  mochaTest: {
 //    test: {
 //      specs: ['test/Automative/*.js'],
