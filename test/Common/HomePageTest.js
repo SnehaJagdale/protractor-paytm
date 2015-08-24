@@ -33,11 +33,12 @@ describe ('This a software test specification for Home Page in PayTM Website', f
     });
 
     it ('Regression:Should Sets number/amount and should return the provider', function(done) {
-        var rechargeData = objutils.SetData();
-        var mobNo = rechargeData[0].Number;
-        var mobOperator = rechargeData[0].Operator;
-        objHomePage.mobileRecharge(mobNo,mobOperator,'300');// '9049894475','Vodafone','300');
-        expect(objProceedToPay.returnLabelText()).to.eventually.equal('Recharge of ' + mobOperator + ' Mobile ' + mobNo + '  forRs 300');
+       // var rechargeData = objutils.SetData();
+       // var mobNo = rechargeData[0].Number;
+       // var mobOperator = rechargeData[0].Operator;
+        //objHomePage.mobileRecharge(mobNo,mobOperator,'300');// '9049894475','Vodafone','300');
+        objHomePage.mobileRecharge(browser.params.mobileData.mobileNo,browser.params.mobileData.mobileProvider,'300');// '9049894475','Vodafone','300');
+        expect(objProceedToPay.returnLabelText()).to.eventually.equal('Recharge of ' + browser.params.mobileData.mobileProvider + ' Mobile ' + browser.params.mobileData.mobileNo + '  forRs 300');
         objProceedToPay.clickOnProceedButton();
         expect(objLoginPage.verifyLoginPopup()).to.become(true);
         done();
