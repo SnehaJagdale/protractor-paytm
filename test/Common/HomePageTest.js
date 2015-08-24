@@ -20,7 +20,7 @@ describe ('This a software test specification for Home Page in PayTM Website', f
 
     });
 
-    it ('Smoke:Should have expected title for Home Page', function(done) {
+    it ('Should have expected title for Home Page', function(done) {
         expect(objBrowser.getTitleBrowser()).to.eventually.equal('Online Mobile Recharge - Postpaid, DTH & Datacard Bill Payments at Paytm.com');
         done();
     });
@@ -44,7 +44,7 @@ describe ('This a software test specification for Home Page in PayTM Website', f
         done();
     });
 
-    it ('Smoke:Should have all tabs are present on Home Page Loading', function(done){
+    it ('Should have all tabs are present on Home Page Loading', function(done){
         objBrowser.verifyAllTabsOnBrowser();
         done();
     });

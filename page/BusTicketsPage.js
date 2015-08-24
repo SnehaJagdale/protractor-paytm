@@ -16,10 +16,11 @@ var objItemsContainer = require('../ui_elements/ItemsContainer.js');
 var objLoginPage = require('../page/LoginPage.js');
 var avialableSeat = ".bus-seat a img[src='https://shop.paytm.com/images/available-seat2.png']";
 var seat = element(by.xpath(".//*[@id='site-wrapper']/div[5]/div/span/div[1]/div[4]/div[3]/div[9]/div[2]/div/div[1]/div/ul[2]/li[1]/a/img[5]"));
-var dropdownItems = element(by.xpath(".//*[@id='boarding-point']/ul/li[1]"));
-var dropdown = element(by.css('ul.drpdwn-arrow-bus1'));//xpath("//div[@class='seats-chart clear active']/div[2]/div/div[2]/div[6]/div[1]/ul"));
-var proccedButton = element(by.css('button.btn.btn-primary.btn-block.w-240'));
-
+var dropdownItems = element(by.xpath(".//*[@class='grid-tic ng-scope'][1]//*[@id='boarding-point']/ul/li[1]"));//.//*[@id='boarding-point']/ul/li[1]"));
+var dropdown = element(by.xpath("//div[@class='seats-chart clear active']/div[2]/div/div[2]/div[6]/div[1]/ul")); //css('ul.drpdwn-arrow-bus1'));//
+var proccedButton = element(by.xpath("//*[@id='site-wrapper']/div[5]/div/span/div[1]/div[4]/div[3]/div[10]/div[2]/div/div[2]/div[9]/button")); //css('button.btn.btn-primary.btn-block.w-240'));
+var busType = element(by.xpath("//*[@id='site-wrapper']/div[5]/div/span/div[1]/div[3]/div[3]/div/ol/li[1]/div/span"));
+var busOperators = element(by.xpath("//*[@id='site-wrapper']/div[5]/div/span/div[1]/div[3]/div[5]/div/ol/li[5]/div"));
 var seats = element.all(by.css('.product-listing .grid-tic .seats-chart .bus-seat .seats-container .fixed-width'));
 //******************** functions *******************
 
@@ -28,18 +29,24 @@ exports.ticketBooking = function(originData,destinationData,dateOfJourneyData) {
     objText.Entertextfieldatawithtab(destination,destinationData);
     objCalendar.clickOnDate(dateOfJourneyData);
     objButton.ClickButton(proceedButton);
+
+    //browser.sleep(3000);
+    objButton.ClickButton(busType);
+    //browser.sleep(3000);
+    objButton.ClickButton(busOperators);
+    //browser.sleep(3000);
+    browser.executeScript('window.scrollTo(0,0);');
+    //browser.sleep(3000);
+
     objItemsContainer.clickOnItemBasedOnIndex(productList,0);
-    //objButton.ClickButton(avialableSeat);
-    //var a =  productList.first().element(by.css(avialableSeat));
-    browser.sleep(3000);
+    //browser.sleep(3000);
     objItemsContainer.clickOnItemBasedOnIndex(seats,0);
-    //objButton.ClickButton(seat);
-    browser.sleep(3000);
+    //browser.sleep(3000);
     objList.clickOnList(dropdown);
     objList.clickOnList(dropdownItems);
     browser.sleep(3000);
 	objButton.ClickButton(proccedButton);
     //expect(objLoginPage.verifyLoginPopup()).to.become(true);
 
-    browser.sleep(6000);
+    //browser.sleep(6000);
 };
