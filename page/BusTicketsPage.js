@@ -30,23 +30,14 @@ exports.ticketBooking = function(originData,destinationData,dateOfJourneyData) {
     objCalendar.clickOnDate(dateOfJourneyData);
     objButton.ClickButton(proceedButton);
 
-    //browser.sleep(3000);
     objButton.ClickButton(busType);
-    //browser.sleep(3000);
     objButton.ClickButton(busOperators);
-    //browser.sleep(3000);
     browser.executeScript('window.scrollTo(0,0);');
-    //browser.sleep(3000);
 
     objItemsContainer.clickOnItemBasedOnIndex(productList,0);
-    //browser.sleep(3000);
     objItemsContainer.clickOnItemBasedOnIndex(seats,0);
-    //browser.sleep(3000);
     objList.clickOnList(dropdown);
     objList.clickOnList(dropdownItems);
-    browser.sleep(3000);
 	objButton.ClickButton(proccedButton);
     //expect(objLoginPage.verifyLoginPopup()).to.become(true);
-
-    //browser.sleep(6000);
 };
