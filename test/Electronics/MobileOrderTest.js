@@ -18,6 +18,9 @@ describe ('This a software test specification for for ordering a Mobile Page in 
     it ('Smoke : Should place a mobile order', function(done) {
         objMobilePage.clickOnMobileTab();
         browser.waitForAngular();
+
+        objMobilePage.selectMobileSpecification();
+
         objMobilePage.clickOnItem();
         browser.waitForAngular();
         objMobilePage.clickOnBuy();
