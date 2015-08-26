@@ -15,6 +15,11 @@ describe ('This a software test specification for for ordering a Mobile Page in 
         objBrowser.launchBrowser("https://paytm.com/");
     });
 
+     it ('Smoke : Should have expected title for Home Page', function(done) {
+        expect(objBrowser.getTitleBrowser()).to.eventually.equal('Online Mobile Recharge - Postpaid, DTH & Datacard Bill Payments at Paytm.com');
+        done();
+    });
+
     it ('Smoke : Should place a mobile order', function(done) {
         objMobilePage.clickOnMobileTab();
         browser.waitForAngular();

@@ -16,7 +16,7 @@ var osCheckBox = element(by.xpath("//div[@id='site-wrapper']/div[5]/div/div[5]/d
 var intMemoryCheckBox = element(by.xpath("//div[@id='site-wrapper']/div[5]/div/div[5]/div[1]/div[7]/div/div/ol/li[6]/div/span"));
 
 exports.clickOnMobileTab = function () {
-    objTab.clickOnTabAndSubTab(electronicstab,mobileTab);
+	objTab.clickOnTabAndSubTab(electronicstab,mobileTab);
 };
 
 exports.selectMobileSpecification = function(){
@@ -26,9 +26,9 @@ exports.selectMobileSpecification = function(){
 };
 
 exports.clickOnItem = function () {
-    objItemsContainer.clickOnItemBasedOnIndex(productcategory,0);
+	objItemsContainer.clickOnItemBasedOnIndex(productcategory,0);
 };
 
 exports.clickOnBuy = function () {
-    objButton.ClickButton(buybutton);
+	objButton.ClickButton(buybutton);
 };

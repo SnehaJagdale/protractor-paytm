@@ -10,7 +10,7 @@ chai.should();
 exports.clickOnDate = function (tileText) {
     'use strict';
     //Select all date elements and apply filter function
-    element.all(by.css('.picker__day')).filter(function (elem) {
+    element.all(by.css('.picker__day.picker__day--infocus')).filter(function (elem) {
         //Return the element or elements
         return elem.getText().then(function (text) {
             //Match the text
